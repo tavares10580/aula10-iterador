@@ -1,22 +1,21 @@
- const nomes = new Set();
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sortedor</title>
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <h1> Sorteado - Adicione um nome</h1>
+    <input id="nome" type= "text" placeholder="Adicione o nome da pessoa">
+    <input type="button" value="Adicionar" onclick="adicionar()">
 
-function adicionar(){
-    const nome = document.getElementById("nome");
-    const lista = document.getElementsByTagName("ul")[0];
-    const item = document.createElement("li");
-    let nomeUpper = nome.value;
-    item.textContent = nomeUpper.toUpperCase();
-    nomes.add(nomeUpper.toUpperCase());
-    nome.value="";
-    lista.appendChild(item);
-
-}
-
-function sortear(){
-    const listaNomes = Array.from(nomes);
-    const sorteado = listaNomes[Math.floor(Math.random()*listaNomes.length)]
-    const listaSorteado = document.getElementsByTagName("ul")[1];
-    const itemSorteado = document.createElement("li");
-    itemSorteado.textContent = sorteado;
-    listaSorteado.appendChild(itemSorteado);
-}
+    <input type="button" value = "sortear" onclick="sortear()">
+    <ul>Lista de prticipantes</ul>
+    <ul>sorteado</ul>
+    
+</body>
+</html>
